@@ -36,8 +36,6 @@ full-stack-chatbot/
 └── README.md
 ```
 
-### Backend Setup
-
 ## Backend Setup
 
 ### 1. Go to the backend folder
@@ -89,8 +87,6 @@ FastAPI API documentation is available at:
 http://127.0.0.1:8000/docs
 
 The `/docs` page can be used for testing.
-
-### Frontend Setup
 
 ## Frontend Setup
 
