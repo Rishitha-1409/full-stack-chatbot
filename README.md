@@ -34,89 +34,80 @@ full-stack-chatbot/
 │
 ├── .gitignore
 └── README.md
+```
 
-Backend Setup
+### Backend Setup
+
 1. Go to the backend folder
-cd backend
-2. Create a virtual environment
-python -m venv venv
-3. Activate the virtual environment on Windows
-venv\Scripts\activate
-4. Install the required packages
-pip install -r requirements.txt
-5. Configure the API key
-Create a .env file inside the backend folder and add your OpenRouter API key:
-OPENROUTER_API_KEY=YOUR_API_KEY
+   cd backend
 
-Replace YOUR_API_KEY
+2. Create a virtual environment
+   python -m venv venv
+
+3. Activate the virtual environment on Windows
+   venv\Scripts\activate
+
+4. Install the required packages
+   pip install -r requirements.txt
+
+5. Configure the API key
+   Create a .env file inside the backend folder and add the OpenRouter API key:
+   OPENROUTER_API_KEY=YOUR_API_KEY
+   Replace YOUR_API_KEY
 
 6. Start the FastAPI server
-uvicorn main:app --reload
+   uvicorn main:app --reload
 
 The backend will run at:
 http://127.0.0.1:8000
 
 FastAPI API documentation is available at:
 http://127.0.0.1:8000/docs
+(Can be used for testing)
 
-Frontend Setup
+### Frontend Setup
+
 Open another terminal.
+
 1. Go to the frontend folder
-cd frontend
+   cd frontend
+
 2. Install dependencies
-npm install
+   npm install
+
 3. Start the React development server
-npm run dev
+   npm run dev
+
 The frontend will run at:
 http://localhost:5173
 
-How It Works
+### How it works
+
 The user enters a message in the React chatbot interface.
 React immediately displays the user's message.
 React sends the message to the FastAPI /chat endpoint using an HTTP POST request.
 FastAPI receives the message.
-FastAPI sends the message to OpenRouter using the standard OpenAI Python client.
-The openrouter/free model router selects an available free LLM.
-The LLM generates a response.
+FastAPI sends the message to OpenRouter using the OpenAI Python client.
+The openrouter/free model router processes the request and generates a response.
 FastAPI returns the response to the React frontend.
 React displays the AI-generated response in the conversation.
-API Endpoint
+
+### API Endpoint
+
 POST /chat
 
-Request:
+#### Request
 
+```json
 {
   "message": "Hello"
 }
+```
 
-Response:
+#### Response
 
+```json
 {
   "reply": "Hello! How can I help you?"
 }
-
-Features
-
-Full-screen chatbot interface
-Conversational chat history
-User and AI messages
-Scrollable message area
-Immediate display of user messages
-typing indicator
-Error handling
-Markdown-formatted AI responses
-Support for headings, lists, tables, bold text, and code blocks
-Clear chat option
-Responsive user interface
-API key stored using environment variables
-
-Security
-The OpenRouter API key is stored in a .env file and is excluded from GitHub using .gitignore.
-The API key should never be exposed in the React frontend or committed to the GitHub repository.
-
-Testing
-The backend can be tested using the FastAPI Swagger documentation:
-http://127.0.0.1:8000/docs
-
-Use the POST /chat endpoint to send a test message and verify that the backend receives and processes the request correctly.
 ```
