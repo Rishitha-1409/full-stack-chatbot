@@ -15,6 +15,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:3000",
+        "https://full-stack-chatbot-alpha.vercel.app",
     ],
     allow_methods=["*"],
     allow_headers=["*"],
