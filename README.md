@@ -38,47 +38,84 @@ full-stack-chatbot/
 
 ### Backend Setup
 
-1. Go to the backend folder
-   cd backend
+## Backend Setup
 
-2. Create a virtual environment
-   python -m venv venv
+### 1. Go to the backend folder
 
-3. Activate the virtual environment on Windows
-   venv\Scripts\activate
+```bash
+cd backend
+```
 
-4. Install the required packages
-   pip install -r requirements.txt
+### 2. Create a virtual environment
 
-5. Configure the API key
-   Create a .env file inside the backend folder and add the OpenRouter API key:
-   OPENROUTER_API_KEY=YOUR_API_KEY
-   Replace YOUR_API_KEY
+```bash
+python -m venv venv
+```
 
-6. Start the FastAPI server
-   uvicorn main:app --reload
+### 3. Activate the virtual environment on Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### 4. Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Configure the API key
+
+Create a `.env` file inside the `backend` folder and add the OpenRouter API key:
+
+```env
+OPENROUTER_API_KEY=YOUR_API_KEY
+```
+
+Replace `YOUR_API_KEY` with a valid OpenRouter API key.
+
+### 6. Start the FastAPI server
+
+```bash
+uvicorn main:app --reload
+```
 
 The backend will run at:
+
 http://127.0.0.1:8000
 
 FastAPI API documentation is available at:
+
 http://127.0.0.1:8000/docs
-(Can be used for testing)
+
+The `/docs` page can be used for testing.
 
 ### Frontend Setup
 
+## Frontend Setup
+
 Open another terminal.
 
-1. Go to the frontend folder
-   cd frontend
+### 1. Go to the frontend folder
 
-2. Install dependencies
-   npm install
+```bash
+cd frontend
+```
 
-3. Start the React development server
-   npm run dev
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the React development server
+
+```bash
+npm run dev
+```
 
 The frontend will run at:
+
 http://localhost:5173
 
 ### How it works
